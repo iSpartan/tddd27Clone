@@ -1,0 +1,150 @@
+{% load staticfiles %}
+<!doctype html>
+<html lang="en" ng-app="{% block ng_app %}myApp{% endblock %}">
+<head>
+  <meta charset="utf-8">
+  <title>My AngularJS App</title>
+  <link rel="stylesheet" href="{% static "css/app.css" %}"/>
+  <link rel="stylesheet" href="{% static "css/animations.css" %}"/>
+    {%block js%}
+    <script src="{% static "angular/angular.js" %}"></script>
+    <script src="{% static "angular/angular-route.js" %}"></script>
+    <script src="{% static "js/app.js" %}"></script>
+    <script src="{% static "js/services.js" %}"></script>
+    <script src="{% static "js/controllers.js" %}"></script>
+    <script src="{% static "js/filters.js" %}"></script>
+    <script src="{% static "js/directives.js" %}"> </script>
+    {% endblock %}
+</head>
+<body>
+    <div class="bannerDiv">
+    <div class="loginDivContainer">
+      <div class="logInDivBlock" ng-show="showLogin">
+        <button id="closeLogin" ng-click=" showLogin = ! showLogin">&#10008;
+        </button>
+        <form>
+
+          <div id="loginAcceptForgetDiv">
+            <button id="logInBtn" ng-click="">Log In
+            </button>
+            <button id="forgotBtn" ng-click="">Forgot Password
+            </button>
+          </div>
+        </form>
+     </div>
+      <div class="createAndLoginBanner" ng-show="! showLogin">
+        <ul class="loginList">
+            <li><a href="{% url "project" template_name='createAccView' %}">Create Account</a></li>
+            <li> | </li>
+            <li href="" ng-click="showLogin = ! showLogin">Login</li>
+        </ul>
+      </div>
+    </div>  
+  <ul class="menu">
+    <li><a href="{% url "project" template_name='homeView' %}">homeView</a></li>
+    <li><a href="{% url "project" template_name='detailedView' %}">detailedView</a></li>
+    <li><a href="{% url "project" template_name='accountView' %}">accountView</a></li>
+    <li><a href="{% url "project" template_name='createAccView' %}">createAccView</a></li>
+  </ul>
+  </div>
+  <div ></div>    
+ <div class="middleClass">
+  <div class="middleDivChild detailedDiv">
+<ul class="course_info">
+  <li>
+    <span>Course condition</span>
+    <dl>
+      <dd ng-repeat="condition in course.condition">
+        {% verbatim %}
+        {{condition}}
+        {% endverbatim %}
+    </dd>
+    </dl>
+  </li>
+  <li>
+    <span>Greenfee</span>
+    <dl>
+      <dt>Lowest</dt>
+      <dd>
+        {% verbatim %}
+        {{course.greenfee.low}}
+        {% endverbatim %}
+    </dd>
+      <dt>Average</dt>
+      <dd>
+        {% verbatim %}
+        {{course.greenfee.avg}}
+        {% endverbatim %}
+    </dd>
+      <dt>Highest</dt>
+      <dd>
+        {% verbatim %}
+        {{course.greenfee.high}}
+        {% endverbatim %}
+    </dd>
+    </dl>
+  </li>
+  <li>
+    <span>Restuarant Condition</span>
+    <dl>
+      <dt>Cost</dt>
+      <dd>        
+        {% verbatim %}
+        {{course.restaurant.cost}}
+        {% endverbatim %}
+    </dd>
+      <dt>Overall</dt>
+      <dd>
+        {% verbatim %}
+        {{course.restaurant.overall}}
+        {% endverbatim %}
+    </dd>
+    </dl>
+  </li>
+  <li>
+    <span>Enviroment</span>
+    <dl>
+      <dt>Nature</dt>
+      <dd>
+        {% verbatim %}
+        {{course.enviroment.nature}}
+        {% endverbatim %}
+    </dd>
+      <dt>Bunkers</dt>
+      <dd>
+        {% verbatim %}
+        {{course.enviroment.bunkers}}
+        {% endverbatim %}
+    </dd>
+      <dt>SomethingX</dt>
+      <dd>
+        {% verbatim %}
+        {{course.enviroment.somethingX}}
+        {% endverbatim %}
+    </dd>
+      <dt>SomethingY</dt>
+      <dd>
+        {% verbatim %}
+        {{course.enviroment.somethingY}}
+        {% endverbatim %}
+    </dd>
+    </dl>
+  </li>
+  <li>
+    <span>Overall opinion</span>
+    <dl>
+      <dt>
+        {% verbatim %}
+        {{phone.android.os}} här borde vi ha nån metod för att räkna ist
+        {% endverbatim %}
+    </dt>
+    </dl>
+  </li>
+</ul>
+  </div>
+  <div class="middleDivChild mapDiv">
+  
+  </div>  
+</div>
+</body>
+</html>

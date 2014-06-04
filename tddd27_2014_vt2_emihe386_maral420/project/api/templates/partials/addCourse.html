@@ -1,0 +1,80 @@
+{% load staticfiles %}
+<!doctype html>
+<html lang="en" ng-app="{% block ng_app %}myAppControllers{% endblock %}">
+    <head>
+        <meta charset="utf-8">
+            <title>My AngularJS App</title>
+            <link rel="stylesheet" href="{% static "css/app.css" %}"/>
+            <link rel="stylesheet" href="{% static "css/animations.css" %}"/>
+            {%block js%}
+            <script src="{% static "angular/angular.js" %}"></script>
+            <script src="{% static "angular/angular-route.js" %}"></script>
+            <script src="{% static "js/app.js" %}"></script>
+            <script src="{% static "js/services.js" %}"></script>
+            <script src="{% static "js/controllers.js" %}"></script>
+            <script src="{% static "js/filters.js" %}"></script>
+            <script src="{% static "js/directives.js" %}"> </script>
+            <script>
+                // Add the CSRF Token
+                var app = angular.module('myAppControllers'); // Not including a list of dependent modules (2nd parameter to `module`) "re-opens" the module for additional configuration
+                app.config(['$httpProvider', function($httpProvider) {
+                            $httpProvider.defaults.headers.common['X-CSRFToken'] = '{{ csrf_token|escapejs }}';
+                            }]);
+                </script>
+
+            {% endblock %}
+    </head>
+    <body>
+        {% block content %}
+        <div class="bannerDiv">
+            <div class="loginDivContainer">
+                <div class="logInDivBlock" ng-show="showLogin">
+                    <button id="closeLogin" ng-click=" showLogin = ! showLogin">&#10008;
+                    </button>
+                    <form>
+                        
+                        <div id="loginAcceptForgetDiv">
+                            <button id="logInBtn" ng-click="">Log In
+                            </button>
+                            <button id="forgotBtn" ng-click="">Forgot Password
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                <div class="createAndLoginBanner" ng-show="! showLogin">
+                    <ul class="loginList">
+                        <li><a href="{% url "project" template_name='createAccView' %}">Create Account</a></li>
+                        <li> | </li>
+                        <li href="" ng-click="showLogin = ! showLogin">Login</li>
+                    </ul>
+                </div>
+            </div>
+            <ul class="menu">
+                <li><a href="{% url "project" template_name='homeView' %}">homeView</a></li>
+                <li><a href="{% url "project" template_name='detailedView' %}">detailedView</a></li>
+                <li><a href="{% url "project" template_name='accountView' %}">accountView</a></li>
+                <li><a href="{% url "project" template_name='createAccView' %}">createAccView</a></li>
+                          <li><a href="{% url "project" template_name='addCourse' %}">Add Course</a></li>
+            </ul>
+        </div>
+        <div ></div>
+        <div class="middleClass">
+            <div class="middleDivChild detailedDiv" ng-controller="sendAddedCourse" >
+                <form ng-submit="addCourse()" ng-model="addNewCourse" enctype="application/x-www-form-urlencoded">
+                Course: <input type="text "ng-model="add.course" name="addCourseCourse">
+                <br>
+                    Greenfee: <input ng-model="add.green" type="text"name="addCourseGreenfee">
+                        <br>
+                Restaurant Condition: <input ng-model="add.rest" type="text" name="addCourseRest">
+                    <br>
+                Environment: <input ng-model="add.env" type="text" >
+                    <br>
+                Overall opinion: <input ng-model="add.oo">
+                    <br>
+                    <input type="submit" ng-model="buttonSendAddedCourse" name="send">
+                        
+</div>
+</div>
+
+        {% endblock %}
+

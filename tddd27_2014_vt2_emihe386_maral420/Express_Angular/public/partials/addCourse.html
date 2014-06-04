@@ -1,0 +1,68 @@
+<div ng-controller="addCourseCtrl">
+    <div class="col-md-5 addCourseBackground img-rounded">
+            <form ng-model="addCourse" ng-submit="submit()">
+                <h1>Add Course</h1>
+                <fieldset class="fieldSetSet">
+                    <div class="fieldSetField">
+                        <label class="fieldSetText fieldSetLeft">
+                            Course name:
+                        </label>
+                        <input type="text" ng-model="addCourse.name" class="fieldSetText fieldSetRight">
+                    </div>
+                    <div class="fieldSetField">
+                        <label class="fieldSetText fieldSetLeft">
+                            Greenfee:
+                        </label>
+                        <input type="text" ng-model="addCourse.greenFee" class="fieldSetText fieldSetRight">
+                    </div>
+                    <div class="fieldSetField">
+                        <label class="fieldSetText fieldSetLeft">
+                            Restaurant Condition:
+                        </label>
+                        <input type="text" ng-model="addCourse.restCond" class="fieldSetText fieldSetRight">
+                    </div>
+                    <div class="fieldSetField">
+                        <label class="fieldSetText fieldSetLeft">
+                            Enviroment:
+                        </label>
+                        <input type="text" ng-model="addCourse.env" class="fieldSetText fieldSetRight">
+                    </div>
+                    <div class="fieldSetField">
+                        <label class="fieldSetText fieldSetLeft">
+                            Describe the course:
+                        </label>
+                        <input type="text" ng-model="addCourse.description" class="fieldSetText fieldSetRight">
+                    </div>
+                    <div class="fieldSetField">
+                        <label class="fieldSetText fieldSetLeft">
+                            Overall opinion:
+                        </label> 
+		
+                     	  <rating ng-model="addCourse.opinion" max="10" readonly="false" 
+				   class="fieldSetText fieldSetRight"></rating>
+			
+                    </div>
+<!--                    
+                    <div class="fieldSetField">
+                        <label class="fieldSetText fieldSetLeft">
+                            Picture:
+                        </label>
+                        <input type="file" file-model="addCourse.picture" class="fieldSetText fieldSetRight">
+                    </div> 
+-->
+                </fieldset>
+                <div>
+		  <input type="submit" id="submit" value="send">
+                    <label ng-model="newCourseResponse">
+                    </label>
+
+                </div>
+		
+            </form>
+    </div>
+<!-- 
+    <div class="col-md-5 addCourseBackground img-rounded">
+
+    </div>  
+-->
+</div>

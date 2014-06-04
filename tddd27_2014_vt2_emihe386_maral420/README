@@ -1,0 +1,42 @@
+Functional specification:
+The project will be to create a client and server, which will allow
+users to rank different golf courses, give comments and see where
+they are geographicly located. You will also as a client be able to add golf courses if they don't already exists on the webpage.
+
+The ranking will preliminary be based on:
+	- The geograpic location
+	- Course condition (fairway, green...)
+	- The greenfee
+	- Restuarant condition
+	- Enviroment
+	- Overall opinion
+
+The client should also be able to search for golf courses based
+on different criterias, such as:
+	- Course character
+	- Proximity
+	- The greenfee
+	- Textbox for name search
+		Advanced filtering
+		- Ranking criteriums
+
+Technical specification:
+	- Server Framework
+		We are planning on using Django as the serverside framework
+	- Client Framework
+		We are planning on using AngularJS as the client framework
+	- Datastorage
+		We will use mongoDB, since we have never used it and it
+		seems to fit with how we think the DB could look like.
+	- Authentication
+		The authentication will be handled using openID
+	- Different functionality based on authentication
+		We will make sure that logged in users will have access
+		to more features than a ordinary user
+	- Phone/Tablet/PC handling
+		We may implement handling for different screen sizes, based
+		on if there will be enough time for such a thing
+	- Testing
+        	During development we will use KARMA+JASMINE for testing.
+		We may also use Selenium, based on how much time we have.
+		We will prioritize this before the previous statement

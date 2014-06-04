@@ -1,0 +1,63 @@
+{% load staticfiles %}
+<!doctype html>
+<html lang="en" ng-app="{% block ng_app %}myApp{% endblock %}">
+<head>
+  <meta charset="utf-8">
+  <title>My AngularJS App</title>
+  <link rel="stylesheet" href="{% static "css/app.css" %}"/>
+  <link rel="stylesheet" href="{% static "css/animations.css" %}"/>
+    {%block js%}
+    <script src="{% static "angular/angular.js" %}"></script>
+    <script src="{% static "angular/angular-route.js" %}"></script>
+    <script src="{% static "js/app.js" %}"></script>
+    <script src="{% static "js/services.js" %}"></script>
+    <script src="{% static "js/controllers.js" %}"></script>
+    <script src="{% static "js/filters.js" %}"></script>
+    <script src="{% static "js/directives.js" %}"> </script>
+    {% endblock %}
+</head>
+<body>
+    <div class="bannerDiv">
+    <div class="loginDivContainer">
+      <div class="logInDivBlock" ng-show="showLogin">
+        <button id="closeLogin" ng-click=" showLogin = ! showLogin">&#10008;
+        </button>
+        <form>
+          <fieldset class="accountAndPasswordSet">
+
+          </fieldset>
+          <div id="loginAcceptForgetDiv">
+            <button id="logInBtn" ng-click="">Log In
+            </button>
+            <button id="forgotBtn" ng-click="">Forgot Password
+            </button>
+          </div>
+        </form>
+     </div>
+      <div class="createAndLoginBanner" ng-show="! showLogin">
+        <ul class="loginList">
+            <li><a href="{% url "project" template_name='createAccView' %}">Create Account</a></li>
+            <li> | </li>
+            <li href="" ng-click="showLogin = ! showLogin">Login</li>
+        </ul>
+      </div>
+    </div>  
+  <ul class="menu">
+    <li><a href="{% url "project" template_name='homeView' %}">homeView</a></li>
+    <li><a href="{% url "project" template_name='detailedView' %}">detailedView</a></li>
+    <li><a href="{% url "project" template_name='accountView' %}">accountView</a></li>
+    <li><a href="{% url "project" template_name='createAccView' %}">createAccView</a></li>
+  </ul>
+  </div>
+  <div ></div>
+
+
+
+  <!-- In production use:
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
+  -->
+ 
+         
+ 
+</body>
+</html>

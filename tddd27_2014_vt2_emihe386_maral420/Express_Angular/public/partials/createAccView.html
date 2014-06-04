@@ -1,0 +1,27 @@
+<div class="middleClass middleClassMain" ng-controller="createAccCtrl">
+	<div class="middleAccountClass">
+		<fieldset class="fieldSetSet">
+			<form ng-model="createNewUserForm">
+            <div class="fieldSetField">
+                <label class="fieldSetText fieldSetLeft">
+                    Email:
+                </label>
+                <input type="text" ng-model="newUser.userName"class ="fieldSetText fieldSetRight">
+            </div>
+            <div class="fieldSetField">
+                <label class="fieldSetText fieldSetLeft">
+                    Password:
+                </label>
+                <input type="text" ng-model="newUser.password"class ="fieldSetText fieldSetRight">
+            </div>
+			</form>
+		</fieldset>
+			<div class="middleClass">
+                <label class="middleClass" ng-model="createAccountResponse">
+                </label>
+                <button class="middleClass" ng-click="createAccount()">
+                	Create account
+                </button>
+            </div>
+	</div>
+</div>

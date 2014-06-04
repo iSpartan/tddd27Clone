@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en" >
+<head>
+  <meta charset="utf-8">
+  <title>My AngularJS App</title>
+  <link rel="stylesheet" href="css/app.css"/>
+        <link rel="stylesheet" href="css/animations.css"/>
+      <script src="../angular/angular.js"></script>
+      <script src="../angular/angular-route.js"></script>
+      <script src="js/app.js"></script>
+      <script src="js/services.js"></script>
+      <script src="js/controllers.js"></script>
+      <script src="js/filters.js"></script>
+      <script src="js/directives.js"></script>
+</head>
+<body ng-app="myApp">
+  <div class="bannerDiv">
+    <div class="loginDivContainer">
+      <div class="logInDivBlock" ng-show="showLogin">
+        <button id="closeLogin" ng-click=" showLogin = ! showLogin">&#10008;
+        </button>
+        <form ng-model="logInForm" enctype="application/x-www-form-urlencoded">
+          <fieldset class="accountAndPasswordSet">
+            <div class="logInFullField" id="logInEmailDiv">
+                <label class="logInText logInLeft">
+                    Email:
+                </label>
+                <input class ="logInText logInRight">
+
+                </input>
+            </div>
+            <div class="logInFullField" id="logInPasswordDiv">
+                <label class="logInText logInLeft">
+                    Password:
+                </label>
+                <input class ="logInText logInRight">
+
+                </input>
+            </div>
+          </fieldset>
+          <div id="loginAcceptForgetDiv">
+            <button id="logInBtn" ng-click="tryLogin()">Log In
+            </button>
+            <button id="forgotBtn" ng-click="forgotPassword()">Forgot Password
+            </button>
+            <label ng-model="logInResponse">
+            </label>
+          </div>
+        </form>
+     </div>
+      <div class="createAndLoginBanner" ng-show="! showLogin">
+        <ul class="loginList">
+            <li><a href="#/createAccView">Create Account</a></li>
+            <li> | </li>
+            <li href="" ng-click="showLogin = ! showLogin">Login</li>
+        </ul>
+      </div>
+    </div>  
+  <ul class="menu">
+    <li><a href="#/homeView">homeView</a></li>
+    <li><a href="#/detailedView">detailedView</a></li>
+    <li><a href="#/accountView">accountView</a></li>
+    <li><a href="#/createAccView">createAccView</a></li>
+  </ul>
+  </div>
+
+  <div ng-view></div>
+
+
+
+  <!-- In production use:
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
+  -->
+ 
+         
+ 
+</body>
+</html>

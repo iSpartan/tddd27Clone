@@ -1,0 +1,24 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node', '/usr/local/bin/npm', 'star', 'app/' ]
+2 info using npm@1.4.6
+3 info using node@v0.11.13-pre
+4 error Error: Must be logged in to star/unstar packages
+4 error     at RegClient.star (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/star.js:5:45)
+4 error     at /usr/local/lib/node_modules/npm/lib/star.js:25:14
+4 error     at /usr/local/lib/node_modules/npm/node_modules/slide/lib/async-map.js:54:35
+4 error     at Array.forEach (native)
+4 error     at /usr/local/lib/node_modules/npm/node_modules/slide/lib/async-map.js:54:11
+4 error     at Array.forEach (native)
+4 error     at asyncMap (/usr/local/lib/node_modules/npm/node_modules/slide/lib/async-map.js:53:8)
+4 error     at EventEmitter.star (/usr/local/lib/node_modules/npm/lib/star.js:24:3)
+4 error     at Object.commandCache.(anonymous function) (/usr/local/lib/node_modules/npm/lib/npm.js:203:11)
+4 error     at EventEmitter.<anonymous> (/usr/local/lib/node_modules/npm/bin/npm-cli.js:83:28)
+5 error If you need help, you may report this *entire* log,
+5 error including the npm and node versions, at:
+5 error     <http://github.com/npm/npm/issues>
+6 error System Linux 3.13.0-24-generic
+7 error command "/usr/local/bin/node" "/usr/local/bin/npm" "star" "app/"
+8 error cwd /home/iacerbunto/tddd27_2014_vt2_emihe386_maral420
+9 error node -v v0.11.13-pre
+10 error npm -v 1.4.6
+11 verbose exit [ 1, true ]

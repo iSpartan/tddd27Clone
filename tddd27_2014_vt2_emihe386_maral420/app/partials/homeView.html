@@ -1,0 +1,48 @@
+<div class="middleClass">
+    <div class="middleDivChild detailedDiv">
+<div id="searchWindow">
+    <input ng-model="query" class="ng-pristine ng-valid">
+        <button ng-click="searchButton">Search</button>
+</div>
+Use filter: <input type="checkbox" ng-model="checked">
+    <div class="check-element animate-show" ng-show="checked">
+        <div id="filterForm">
+            Greenfee:
+            <select ng-model="Greenfee">
+                <option value="1">200-300</option>
+                <option value="2">300-400</option>
+                <option value="3">400-500</option>
+                <option value="4">500+</option>
+            </select>
+            Course character:
+            <select ng-model="Course_character">
+                <option value="1">Link</option>
+                <option value="2">Hills</option>
+                <option value="3">Seaside</option>
+            </select>
+            Nearby :
+            <select ng-model="Course_character">
+                <option value="1">Stockholm</option>
+                <option value="2">Gothenburg</option>
+                <option value="3">Malmö</option>
+            </select>
+        </div>
+    </div>
+    
+    <br>
+    <div ng-controller="homeCtrl">
+        <table>
+        <tr>
+            <th>Course:</th>
+            <th> Greenfee:</th>
+        </tr>
+        <tr ng-repeat="homeview in homeViews">
+            <td>{{homeview.name}}</td> <td>{{homeview.greenfee}}</td>
+        </tr>
+    </table>
+        </div>
+    </div>
+        <div class="middleDivChild mapDiv">
+    
+    </div>
+</div>

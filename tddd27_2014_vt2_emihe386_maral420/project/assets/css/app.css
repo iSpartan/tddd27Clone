@@ -1,0 +1,161 @@
+/* app css stylesheet */
+
+.menu {
+  list-style: none;
+  border-bottom: 0.1em solid black;
+  margin-bottom: 2em;
+  padding: 0 0 0.5em;
+}
+
+.createAndLoginBanner {
+  background-color: red;
+  width: 300px;
+  height: 27px;
+}
+
+.logInDivBlock {
+  background-color: green;
+  padding: 6px;
+  margin-right: 100px;
+  width: 300px;
+  height: 90px;
+}
+
+.loginDivContainer {
+  float: right;
+}
+
+.createAndLoginBanner li {
+  display: inline;
+}
+
+.loginList {
+  list-style: none;
+  margin-bottom: 2em;
+  padding: 0 0 0.5em;
+  display: inline;
+  height: 30px;
+}
+
+.bannerDiv {
+  background-color: black;
+  width: 1000px;
+     min-height: 30px;
+  margin: 0px auto;
+}
+
+.middleClass {
+     width:1000px;
+     min-height: 100px;
+  margin: 100px auto;
+  background-color: red;
+}
+
+.middleDivChild {
+  width: 49.5%;
+}
+
+.detailedDiv {
+  background-color: green;
+  float: left;
+}
+
+.mapDiv {
+  background-color: blue;
+  float: right;
+  width: 50px;
+  height: 50px;
+}
+
+.menu:before {
+  content: "[";
+}
+
+.menu:after {
+  content: "]";
+}
+
+.menu > li {
+  display: inline;
+}
+
+.menu > li:before {
+  content: "|";
+  padding-right: 0.3em;
+}
+
+.menu > li:nth-child(1):before {
+  content: "";
+  padding: 0;
+}
+animate-show {
+  line-height:20px;
+  opacity:1;
+  padding:10px;
+  border:1px solid black;
+  background:white;
+}
+ 
+.animate-show.ng-hide-add,
+.animate-show.ng-hide-remove {
+  display:block!important;
+}
+ 
+.animate-show.ng-hide-add.ng-hide-add-active,
+.animate-show.ng-hide-remove.ng-hide-remove-active {
+  -webkit-transition:all linear 0.5s;
+  transition:all linear 0.5s;
+}
+ 
+.animate-show.ng-hide {
+  line-height:0;
+  opacity:0;
+  padding:0 10px;
+}
+ 
+.check-element {
+  padding:10px;
+  border:1px solid black;
+  background:white;
+}
+table {
+  border: 1px solid #666;   
+    width: 100%;
+}
+th {
+  background: #f8f8f8; 
+  font-weight: bold;    
+    padding: 2px;
+}
+
+#closeLogin{
+  float:right;
+}
+
+.accountAndPasswordSet{
+  border: 0px;
+  padding: 2px;
+  margin-right: 12px;
+}
+
+.logInFullField{
+  min-height: 32px;
+  max-height: 32px;
+}
+
+.logInText{
+  margin: 2px;
+  min-height: 20px;
+  max-height: 20px;
+}
+
+.logInLeft{
+  float: left;
+  line-height: 32px;
+  vertical-align: middle;
+}
+
+.logInRight{
+  height: 14px;
+  float: right;
+}

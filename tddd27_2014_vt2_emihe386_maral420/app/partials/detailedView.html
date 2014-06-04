@@ -1,0 +1,54 @@
+<div class="middleClass">
+	<div class="middleDivChild detailedDiv">
+<ul class="course_info">
+  <li>
+    <span>Course condition</span>
+    <dl>
+      <dd ng-repeat="condition in course.condition">{{condition}}</dd>
+    </dl>
+  </li>
+  <li>
+    <span>Greenfee</span>
+    <dl>
+      <dt>Lowest</dt>
+      <dd>{{course.greenfee.low}}</dd>
+      <dt>Average</dt>
+      <dd>{{course.greenfee.avg}}</dd>
+      <dt>Highest</dt>
+      <dd>{{course.greenfee.high}}</dd>
+    </dl>
+  </li>
+  <li>
+    <span>Restuarant Condition</span>
+    <dl>
+      <dt>Cost</dt>
+      <dd>{{course.restaurant.cost}}</dd>
+      <dt>Overall</dt>
+      <dd>{{course.restaurant.overall}}</dd>
+    </dl>
+  </li>
+  <li>
+    <span>Enviroment</span>
+    <dl>
+      <dt>Nature</dt>
+      <dd>{{course.enviroment.nature}}</dd>
+      <dt>Bunkers</dt>
+      <dd>{{course.enviroment.bunkers}}</dd>
+      <dt>SomethingX</dt>
+      <dd>{{course.enviroment.somethingX}}</dd>
+      <dt>SomethingY</dt>
+      <dd>{{course.enviroment.somethingY}}</dd>
+    </dl>
+  </li>
+  <li>
+    <span>Overall opinion</span>
+    <dl>
+      <dt>{{phone.android.os}} här borde vi ha nån metod för att räkna ist</dt>
+    </dl>
+  </li>
+</ul>
+	</div>
+	<div class="middleDivChild mapDiv">
+	
+	</div>	
+</div>

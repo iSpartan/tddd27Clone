@@ -1,0 +1,33 @@
+<div ng-controller="accountCtrl">
+	<div class="col-md-12 infoBackground">
+		<fieldset class="fieldSetSet">
+            <form ng-model="chaneUserPasswordForm">
+            <div class="fieldSetField">
+                <label class="fieldSetText fieldSetLeft">
+                    Old password:
+                </label>
+                <input type="text" ng-model="user.oldPassword" class ="fieldSetText fieldSetRight">
+            </div>
+            <div class="fieldSetField">
+                <label class="fieldSetText fieldSetLeft">
+                    Repeat old password:
+                </label>
+                <input type="text" ng-model="user.oldPasswordRpt" class ="fieldSetText fieldSetRight">
+            </div>
+            <div class="fieldSetField">
+                <label class="fieldSetText fieldSetLeft">
+                    New password:
+                </label>
+                <input type="text" ng-model="user.newPassword" class ="fieldSetText fieldSetRight">
+            </div>
+            </form>
+		</fieldset>
+			<div class="">
+                <label class="middleClass" ng-model="changePasswordResponse">
+                </label>
+                <button class="middleClass" ng-click="changePassword()">
+                    Change password
+                </button>
+            </div>
+	</div>
+</div>

@@ -1,0 +1,127 @@
+{% load staticfiles %}
+<!doctype html>
+<html lang="en" ng-app="{% block ng_app %}myApp{% endblock %}">
+<head>
+  <meta charset="utf-8">
+  <title>My AngularJS App</title>
+  <link rel="stylesheet" href="{% static "css/app.css" %}"/>
+  <link rel="stylesheet" href="{% static "css/animations.css" %}"/>
+    {%block js%}
+    <script src="{% static "angular/angular.js" %}"></script>
+    <script src="{% static "angular/angular-route.js" %}"></script>
+    <script src="{% static "js/app.js" %}"></script>
+    <script src="{% static "js/services.js" %}"></script>
+    <script src="{% static "js/controllers.js" %}"></script>
+    <script src="{% static "js/filters.js" %}"></script>
+    <script src="{% static "js/directives.js" %}"> </script>
+    {% endblock %}
+</head>
+<body>
+    <div class="bannerDiv">
+    <div class="loginDivContainer">
+      <div class="logInDivBlock" ng-show="showLogin">
+        <button id="closeLogin" ng-click=" showLogin = ! showLogin">&#10008;
+        </button>
+        <form ng-model="logInForm" enctype="application/x-www-form-urlencoded">
+          <fieldset class="accountAndPasswordSet">
+            <div class="logInFullField" id="logInEmailDiv">
+                <label class="logInText logInLeft">
+                    Email:
+                </label>
+                <input class ="logInText logInRight">
+
+                </input>
+            </div>
+            <div class="logInFullField" id="logInPasswordDiv">
+                <label class="logInText logInLeft">
+                    Password:
+                </label>
+                <input class ="logInText logInRight">
+
+                </input>
+            </div>
+          </fieldset>
+          <div id="loginAcceptForgetDiv">
+            <button id="logInBtn" ng-click="tryLogin()">Log In
+            </button>
+            <button id="forgotBtn" ng-click="forgotPassword()">Forgot Password
+            </button>
+            <label ng-model="logInResponse">
+            </label>
+          </div>
+        </form>
+     </div>
+      <div class="createAndLoginBanner" ng-show="! showLogin">
+        <ul class="loginList">
+            <li><a href="{% url "project" template_name='createAccView' %}">Create Account</a></li>
+            <li> | </li>
+            <li href="" ng-click="showLogin = ! showLogin">Login</li>
+        </ul>
+      </div>
+    </div>  
+  <ul class="menu">
+    <li><a href="{% url "project" template_name='homeView' %}">homeView</a></li>
+    <li><a href="{% url "project" template_name='detailedView' %}">detailedView</a></li>
+    <li><a href="{% url "project" template_name='accountView' %}">accountView</a></li>
+    <li><a href="{% url "project" template_name='createAccView' %}">createAccView</a></li>
+  </ul>
+  </div>
+  <div ></div>
+
+
+<div class="middleClass">
+    <div class="middleDivChild detailedDiv">
+<div id="searchWindow">
+    <input ng-model="query" class="ng-pristine ng-valid">
+        <button ng-click="searchButton">Search</button>
+</div>
+Use filter: <input type="checkbox" ng-model="checked">
+    <div class="check-element animate-show" ng-show="checked">
+        <div id="filterForm">
+            Greenfee:
+            <select ng-model="Greenfee">
+                <option value="1">200-300</option>
+                <option value="2">300-400</option>
+                <option value="3">400-500</option>
+                <option value="4">500+</option>
+            </select>
+            Course character:
+            <select ng-model="Course_character">
+                <option value="1">Link</option>
+                <option value="2">Hills</option>
+                <option value="3">Seaside</option>
+            </select>
+            Nearby :
+            <select ng-model="Course_character">
+                <option value="1">Stockholm</option>
+                <option value="2">Gothenburg</option>
+                <option value="3">Malmö</option>
+            </select>
+        </div>
+    </div>
+    
+    <br>
+    <div ng-controller="homeCtrl">
+        <table>
+        <tr>
+            <th>Course:</th>
+            <th> Greenfee:</th>
+        </tr>
+        <tr ng-repeat="homeview in homeViews">
+            <td>
+                {% verbatim %}
+                {{homeview.name}}</td> <td>{{homeview.greenfee}}
+                {% endverbatim %}
+            </td>
+        </tr>
+    </table>
+        </div>
+    </div>
+        <div class="middleDivChild mapDiv">
+    
+    </div>
+</div>
+       
+ 
+</body>
+</html>

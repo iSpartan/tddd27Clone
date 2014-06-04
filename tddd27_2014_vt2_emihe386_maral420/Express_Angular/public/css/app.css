@@ -1,0 +1,159 @@
+/* app css stylesheet */
+
+.container-fixed {
+  margin: 0px auto;
+    max-width:940px;
+}
+
+ul.courseListClass > li > a {
+  font-size: 20px;
+}
+
+.bodyBackground{
+  background-color: #E0E0E0;
+}
+
+.infoBackground {
+  background-color: #888888;
+}
+
+.courseBackground {
+  background-color: #888888;
+}
+
+.addCourseBackground {
+  background-color: #888888;
+}
+
+.middleClass {
+  margin: 5px auto;
+}
+
+.middleClassMain{
+  margin-top: 100px;
+  background-color: red;
+}
+
+.detailedDiv {
+  background-color: green;
+}
+
+.mapDiv {
+  background-color: blue;
+}
+
+.menu:before {
+  content: "[";
+}
+
+.menu:after {
+  content: "]";
+}
+
+.menu > li {
+  display: inline;
+}
+
+.menu > li:before {
+  content: "|";
+  padding-right: 0.3em;
+}
+
+.menu > li:nth-child(1):before {
+  content: "";
+  padding: 0;
+}
+animate-show {
+  line-height:20px;
+  opacity:1;
+  padding:10px;
+  border:1px solid black;
+  background:white;
+}
+ 
+.animate-show.ng-hide-add,
+.animate-show.ng-hide-remove {
+  display:block!important;
+}
+ 
+.animate-show.ng-hide-add.ng-hide-add-active,
+.animate-show.ng-hide-remove.ng-hide-remove-active {
+  -webkit-transition:all linear 0.5s;
+  transition:all linear 0.5s;
+}
+ 
+.animate-show.ng-hide {
+  line-height:0;
+  opacity:0;
+  padding:0 10px;
+}
+ 
+.check-element {
+  padding:10px;
+  border:1px solid black;
+  background:white;
+}
+table {
+  border: 1px solid #666;   
+    width: 100%;
+}
+th {
+  background: #f8f8f8; 
+  font-weight: bold;    
+    padding: 2px;
+}
+
+#closeLogin{
+  float:right;
+}
+
+.fieldSetSet{
+  border: 0px;
+  padding: 2px;
+  margin-right: 12px;
+}
+
+.fieldSetField{
+  min-height: 32px;
+  max-height: 32px;
+}
+
+.fieldSetText{
+  margin: 2px;
+  min-height: 20px;
+  max-height: 20px;
+}
+
+.fieldSetLeft{
+  float: left;
+  line-height: 32px;
+  vertical-align: middle;
+}
+
+.fieldSetRight{
+  height: 14px;
+  float: right;
+}
+
+.middleAccountClass{
+  width:600px;
+  min-height: 100px;
+  margin: 100px auto;
+  background-color: green;
+}
+
+.courseListClass {
+    list-style: none;
+}
+
+.courseListClass li {
+  clear: both;
+  height: 100px;
+}
+
+.courseListing {
+  display: block;
+  padding: 4px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+}

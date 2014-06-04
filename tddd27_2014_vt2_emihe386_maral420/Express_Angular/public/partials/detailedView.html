@@ -1,0 +1,51 @@
+<div ng-controller="detailedCtrl">
+	<div  class="col-md-5 courseBackground img-rounded">
+    <ul class="course_info">
+      <h1>{{course.courseName}}</h1>
+      <li>
+        <span>Course description</span>
+        <dl>
+          <dt>{{course.description}}</dt>
+        </dl>
+      </li>
+      <li>
+        <span>Greenfee</span>
+        <dl>
+          <dd>{{course.greenfee}}</dd>
+        </dl>
+      </li>
+      <li>
+        <span>Restuarant</span>
+        <dl>
+          <dd>{{course.restCond}}</dd>
+        </dl>
+      </li>
+      <li>
+        <span>Enviroment</span>
+        <dl>
+          <dd>{{course.enviroment}}</dd>
+        </dl>
+      </li>
+      <li>
+        <span>Overall opinion</span>
+        <dl>
+	  <form ng-model="course" ng-submit="submit()">
+	  <rating ng-model="course.opinion" max="10"  readonly="false"></rating>
+	  <input type="submit" id="submit" value="Submit">
+	  </form>
+        </dl>
+      </li>
+    </ul>
+	</div>
+	<div class="col-md-6 pull-right courseBackground img-rounded">
+    <ul>
+      <li ng-repeat="comments in comments">
+       Comment: {{comments.comment}}
+      </li>
+      <div style="margin-top: 10px">
+        <input type="text" ng-model="textcomment.comment"  style="width:300px" style="height:100px">
+          <button ng-click="addnewcomment()">Add comment</button>
+      </div>
+    </ul>
+	</div>	
+</div>
